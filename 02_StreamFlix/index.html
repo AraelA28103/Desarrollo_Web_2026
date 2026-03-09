@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlix - Tu plataforma de streaming</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top barra-oscura">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand text-danger fw-bold fs-3" href="#">STREAMFLIX</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">Series</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">Películas</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#">Mi Lista</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center text-white gap-4">
+                <i class="bi bi-search fs-5" style="cursor: pointer;"></i>
+                <i class="bi bi-bell fs-5" style="cursor: pointer;"></i>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Perfil"
+                    width="35" class="rounded" style="cursor: pointer;">
+            </div>
+        </div>
+    </nav>
+    <header class="hero-portada vh-100 d-flex align-items-center text-white">
+        <div class="container-fluid px-5">
+            <h1 class="display-1 fw-bold mb-4">Stranger Things</h1>
+            <p class="lead w-50 d-none d-md-block mb-4">
+                Cuando un niño desaparece, sus amigos, su familia y la policía se ven envueltos en una serie de eventos
+                misteriosos al tratar de encontrarlo. Un misterio que involucra experimentos secretos y fuerzas
+                sobrenaturales.
+            </p>
+            <div class="botones-hero">
+                <button class="btn btn-light px-4 py-2 me-3 fs-5 fw-bold">
+                    <i class="bi bi-play-fill"></i> Reproducir
+                </button>
+                <button class="btn btn-secondary px-4 py-2 fs-5 fw-bold bg-opacity-50">
+                    <i class="bi bi-info-circle"></i> Más información
+                </button>
+            </div>
+
+        </div>
+    </header>
+    <main class="container-fluid px-5 seccion-catalogo mb-5">
+
+        <!-- Sección 1 -->
+        <h3 class="text-white mb-4 fw-bold">Tendencias ahora</h3>
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/pacific_rim.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/avatar.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/gigantes_acero.webp" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/interestellar.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/guerra_mundialZ.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/greenland.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 2 -->
+        <h3 class="text-white mb-4 fw-bold">Acción y Aventura</h3>
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/mad_max.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/jurassic_world.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/thor_ragnarok.jpeg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/john_wick4.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/gladiator.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/avengers_infinityW.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección 3 -->
+        <h3 class="text-white mb-4 fw-bold">Comedias para el fin de semana</h3>
+        <div class="row g-3">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/haunted_house.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/haunted_house2.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/scary_movie.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/esposa_mentira.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/como_primera_vez.jpg" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="card bg-transparent border-0 tarjeta-pelicula">
+                    <img src="static/images/deadpool.webp" class="card-img rounded-2 shadow" alt="Póster">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const navbar = document.querySelector('.barra-oscura');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
