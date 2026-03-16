@@ -1,0 +1,35 @@
+nav {
+    background-color: #F8FAFD;
+}
+
+.custom-btn {
+    background-color: #F8FAFD;
+    border: none;
+    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.custom-btn:hover {
+    background-color: #EAECEF;
+    border: none;
+    border-radius: 25px;
+}
+
+.logo{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #444746;
+}
+
+.logo a:hover {
+    text-decoration: underline;
+    color: #0B57D0;
+}
+
