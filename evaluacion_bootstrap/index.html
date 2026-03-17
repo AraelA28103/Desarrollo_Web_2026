@@ -13,10 +13,11 @@
 </head>
 <!-- Barra de navegacción -->
 <nav>
-    <div class="nav-container d-flex justify-content-between p-2">
+    <div class="nav-container d-flex justify-content-between p-3">
         <div class="nav-izq d-flex align-items-center">
-            <button class="custom-btn"><i class="bi bi-list"></i></button>
-            <div class="logo d-flex align-content-center">
+            <button class="custom-btn" data-bs-toggle="collapse" data-bs-target="#sidebar"><i
+                    class="bi bi-list"></i></button>
+            <div class="logo d-flex align-content-center gap-2 m-3">
                 <img src="static/images/logo_classroom.svg" alt="Servidor no disponible">
                 <a href="#">Classroom</a>
             </div>
@@ -28,35 +29,59 @@
         </div>
     </div>
 </nav>
-<!-- Sidebar -->
-<aside class="sidebar">
-    <div class="sidevar-top">
-        <ul>
-            <li><button><i class="bi bi-house-door"></i></button></li>
-            <li><button><i class="bi bi-calendar"></i></button></li>
-            <li><button><i class="bi bi-book-half"></i></button></li>
-        </ul>
-    </div>
-    <div class="sidebar-mid">
-        <ul>
-            <li><button><i class="bi bi-backpack3-fill"></i></button></li>
-        </ul>
-    </div>
-    <div class="sidebar-bottom">
-        <ul>
-            <li><button><i class="bi bi-arrow-down-square"></i></button></li>
-            <li><button><i class="bi bi-gear-fill"></i></button></li>
-        </ul>
-    </div>
-
-</aside>
-<!-- Main -->
-<main class="d-flex">
-    <!-- Clases -->
-    <section>
-
-    </section>
-</main>
+<div class="container-fluid p-0 d-flex">
+    <aside class="sidebar vh-100 border-end" id="sidebar">
+        <div class="sidebar-container p-3">
+            <ul class="list-unstyled">
+                <li>
+                    <button class="sidebar-btn d-flex align-items-center">
+                        <i class="bi bi-house-door"></i>
+                        <span class="ms-4 menu-text">Inicio</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="sidebar-btn d-flex align-items-center">
+                        <i class="bi bi-calendar"></i>
+                        <span class="ms-4 menu-text">Calendario</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="sidebar-btn d-flex align-items-center">
+                        <i class="bi bi-book"></i>
+                        <span class="ms-4 menu-text">Recursos</span>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list-unstyled">
+                <li>
+                    <button class="sidebar-btn d-flex align-items-center">
+                        <i class="bi bi-backpack"></i>
+                        <span class="ms-4 menu-text">Cursos a los que te has inscrito</span>
+                    </button>
+                </li>
+            </ul>
+            <ul class="list-unstyled">
+                <li>
+                    <button class="sidebar-btn d-flex align-items-center">
+                        <i class="bi bi-arrow-down-square"></i>
+                        <span class="ms-4 menu-text">Clases archivadas</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="sidebar-btn d-flex align-items-center">
+                        <i class="bi bi-gear"></i>
+                        <span class="ms-4 menu-text">Configuración</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- Main -->
+    <main class="flex-grow-1 vh-100 p-4">
+        <!-- Contenido -->
+    </main>
+</div>
+<script src="static/js/script.js"></script>
 
 <body>
 

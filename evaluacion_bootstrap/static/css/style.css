@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8FAFD;
+}
+
 nav {
     background-color: #F8FAFD;
 }
@@ -9,6 +19,7 @@ nav {
     width: 40px;
     height: 40px;
     font-size: 20px;
+    margin: 4px;
 }
 
 .custom-btn:hover {
@@ -31,5 +42,42 @@ nav {
 .logo a:hover {
     text-decoration: underline;
     color: #0B57D0;
+}
+
+.sidebar {
+    background-color: #F8FAFD;
+    width: 300px; 
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 85px;
+}
+
+.sidebar.collapsed .menu-text {
+    display: none;
+}
+
+.sidebar-btn {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 48px;
+    border: none;
+    background: none;
+    border-radius: 0 25px 25px 0;
+    width: 100%;
+}
+
+.sidebar-btn:hover {
+    background-color: #EAECEF;
+    border: none;
+    border-radius: 25px;
+}
+
+main {
+    background-color: #fff;
+    border-radius: 25px 0px;
 }
 
