@@ -19,6 +19,7 @@ nav {
     width: 40px;
     height: 40px;
     font-size: 20px;
+    margin: 4px;
 }
 
 .custom-btn:hover {
@@ -41,6 +42,7 @@ nav {
     color: #0B57D0;
 }
 
+<<<<<<< HEAD
 aside {
     background-color: #F8FAFD;
 }
@@ -55,6 +57,38 @@ aside {
 
 .aside-btn:hover {
     background-color: #EAECEF;
+=======
+.sidebar {
+    background-color: #F8FAFD;
+    width: 300px; 
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 85px;
+}
+
+.sidebar.collapsed .menu-text {
+    display: none;
+}
+
+.sidebar-btn {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 48px;
+    border: none;
+    background: none;
+    border-radius: 0 25px 25px 0;
+    width: 100%;
+}
+
+.sidebar-btn:hover {
+    background-color: #EAECEF;
+    border: none;
+    border-radius: 25px;
+>>>>>>> 13f2e9a0c1717dc70b0d863ff591f2e5e8ea2baf
 }
 
 main {
@@ -62,8 +96,11 @@ main {
     border-radius: 25px 0px;
 }
 
+<<<<<<< HEAD
 .card {
     width: 300px;
     height: 300px;
 }
 
+=======
+>>>>>>> 13f2e9a0c1717dc70b0d863ff591f2e5e8ea2baf
