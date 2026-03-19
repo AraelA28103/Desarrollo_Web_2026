@@ -1,106 +1,363 @@
-* {
-    margin: 0;
+/* --- VARIABLES Y CONFIGURACIÓN --- */
+:root {
+    --bg-pinterest: #efefef;
+    --bg-hover: #F6F6F3;
+    --black-tooltip: #111;
+    --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+aside {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+/* --- BOTONES (CON CENTRADO TOTAL DE ICONOS) --- */
+.custom-btn,
+.custom-btn2 {
+    background-color: #FFFFFF;
+    border: none;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    /* Flex para centrado */
+    align-items: center;
+    /* Centro vertical */
+    justify-content: center;
+    /* Centro horizontal */
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #F8FAFD;
-}
-
-nav {
-    background-color: #F8FAFD;
+    /* Elimina desviaciones */
+    line-height: 0;
+    /* Quita espacio de texto */
+    cursor: pointer;
 }
 
 .custom-btn {
-    background-color: #F8FAFD;
-    border: none;
-    border-radius: 25px;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    margin: 4px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
 }
 
-.custom-btn:hover {
-    background-color: #EAECEF;
-}
-
-.logo{
+.custom-btn2 {
     width: 30px;
     height: 30px;
-    font-size: 20px;
+    border-radius: 10px;
 }
 
-.logo a{
-    text-decoration: none;
-    color: #444746;
+.custom-btn:hover,
+.custom-btn2:hover {
+    background-color: var(--bg-hover);
 }
 
-.logo a:hover {
-    text-decoration: underline;
-    color: #0B57D0;
+/* Asegura que el icono no tenga márgenes propios */
+.custom-btn i,
+.custom-btn2 i {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1;
 }
 
-<<<<<<< HEAD
-aside {
-    background-color: #F8FAFD;
-}
-
-.aside-btn {
-    width: 100%;
+/* --- NAV 1 (BUSCADOR) --- */
+.form-control {
+    background-color: #E5E5E0 !important;
     height: 50px;
-    border-radius: 25px;
+    border-radius: 12px !important;
     border: none;
-    background-color: #F8FAFD;
 }
 
-.aside-btn:hover {
-    background-color: #EAECEF;
-=======
-.sidebar {
-    background-color: #F8FAFD;
-    width: 300px; 
-    transition: width 0.3s ease;
+.navbar {
+    z-index: 1060;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.sidebar.collapsed {
-    width: 85px;
+.nav-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
 
-.sidebar.collapsed .menu-text {
+/* --- NAV 2 (CATEGORÍAS) --- */
+#secondary-nav {
+    height: 55px;
+    min-height: 55px;
+    z-index: 1050;
+    background-color: #fff;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.nav-hidden {
+    height: 0 !important;
+    min-height: 0 !important;
+    opacity: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    pointer-events: none;
+}
+
+/* Scroll horizontal limpio para categorías */
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
     display: none;
 }
 
-.sidebar-btn {
+/* --- TOOLTIPS (CONSOLIDADOS) --- */
+.custom-tooltip {
+    position: absolute;
+    background-color: var(--black-tooltip);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
     white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Tooltip Aside (Derecha) */
+.tooltip-right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+}
+
+.position-relative:hover .tooltip-right {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(5px);
+}
+
+/* Tooltip Navbar (Abajo) */
+.tooltip-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+.position-relative:hover .tooltip-bottom {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
+}
+
+.nav2-link {
+    text-decoration: none;
+    color: #767676;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 0;
+    border-bottom: 3px solid transparent;
+    /* Reserva el espacio de la línea */
+    display: inline-block;
+}
+
+/* Cuando el botón es seleccionado */
+.nav2-link.active {
+    color: #111;
+    border-bottom-color: #111;
+    /* Aparece la línea negra */
+}
+
+@media (max-width: 767px) {
+
+    /* Cuando el buscador se abre en móvil, se posiciona de forma absoluta */
+    #searchCollapse.show {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 1070;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+}
+
+/* Estilos para tarjetas estilo Pinterest */
+.pin-card {
+    width: 100%;
+    cursor: pointer;
+}
+
+.pin-image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1/1.2;
+    /* Proporción vertical */
+}
+
+.pin-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* Overlay que aparece al hacer hover */
+.pin-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Botones flotantes */
+.pin-btn {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    height: 48px;
-    border: none;
-    background: none;
-    border-radius: 0 25px 25px 0;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    opacity: 0;
+    right: 12px;
+}
+
+.pin-btn i {
+    font-size: 16px;
+    color: #333;
+}
+
+.pin-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.pin-btn-top {
+    top: 12px;
+    transform: translateY(-10px);
+}
+
+.pin-btn-bottom {
+    bottom: 12px;
+    transform: translateY(10px);
+}
+
+/* Botón Guardar inferior */
+.pin-save-btn {
     width: 100%;
-}
-
-.sidebar-btn:hover {
-    background-color: #EAECEF;
+    background: none;
     border: none;
-    border-radius: 25px;
->>>>>>> 13f2e9a0c1717dc70b0d863ff591f2e5e8ea2baf
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
-main {
-    background-color: #fff;
-    border-radius: 25px 0px;
+.pin-save-btn:hover {
+    color: #e60023;
 }
 
-<<<<<<< HEAD
-.card {
-    width: 300px;
-    height: 300px;
+/* Hover effects */
+.pin-card:hover .pin-image-wrapper img {
+    filter: brightness(0.8);
 }
 
-=======
->>>>>>> 13f2e9a0c1717dc70b0d863ff591f2e5e8ea2baf
+.pin-card:hover .pin-overlay {
+    opacity: 1;
+}
+
+.pin-card:hover .pin-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Diferentes proporciones para variedad (opcional) */
+.pin-card[data-ratio="square"] .pin-image-wrapper {
+    aspect-ratio: 1/1;
+}
+
+.pin-card[data-ratio="portrait"] .pin-image-wrapper {
+    aspect-ratio: 1/1.5;
+}
+
+.pin-card[data-ratio="landscape"] .pin-image-wrapper {
+    aspect-ratio: 1.5/1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pin-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .pin-btn i {
+        font-size: 14px;
+    }
+}
+
+/* Unificamos el radio a 25px como tenías en el CSS original */
+.custom-card,
+.custom-card img,
+.contenedor-img {
+    border-radius: 25px !important;
+}
+
+.contenedor-img {
+    position: relative;
+}
+
+/* Estilo base botones */
+.btn-custom-radius {
+    border-radius: 10px !important;
+    border: none;
+}
+
+/* Capa de Hover: simplificada */
+.overlay-botones {
+    position: absolute;
+    inset: 0;
+    /* Cubre todo el contenedor */
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+}
+
+/* Activación del efecto */
+.contenedor-img:hover .overlay-botones {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+/* Animación del botón Guardar */
+.btn-hover-efecto {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-hover-efecto:hover {
+    background-color: #CC001F !important;
+    transform: scale(1.05);
+}
+
+/* Botón inferior estático */
+.btn-light.btn-custom-radius:hover {
+    background-color: #f8f9fa !important;
+    cursor: default;
+}
