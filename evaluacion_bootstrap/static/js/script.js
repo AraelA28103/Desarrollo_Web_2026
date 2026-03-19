@@ -1,34 +1,42 @@
-window.onscroll = function () {
-    const secondaryNav = document.getElementById('secondary-nav');
-    if (window.scrollY > 50) {
-        secondaryNav.classList.add('nav-hidden');
-    } else {
-        secondaryNav.classList.remove('nav-hidden');
-    }
-};
+console.log("Conectado!")
 
+window.addEventListener('load', function () {
+    if (typeof bootstrap !== 'undefined') {
+        const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltips.forEach(el => {
+            new bootstrap.Tooltip(el, {
+                boundary: document.body
+            });
+        });
+    } else {
+        console.error("Bootstrap JS no cargado");
+    }
+});
+
+/* SCROLL NAVBAR + NAV SECUNDARIO */
 const scrollContainer = document.querySelector('.right-page-container');
 const navbar = document.querySelector('.navbar');
+const secondaryNav = document.getElementById('secondary-nav');
 
-scrollContainer.addEventListener('scroll', () => {
-    if (scrollContainer.scrollTop > 10) {
-        navbar.classList.add('nav-scrolled');
-    } else {
-        navbar.classList.remove('nav-scrolled');
-    }
-});
+if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', () => {
 
-const scrollArea = document.querySelector('.right-page-container');
-const nav2 = document.getElementById('secondary-nav');
+        if (scrollContainer.scrollTop > 10) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
 
-scrollArea.addEventListener('scroll', () => {
-    if (scrollArea.scrollTop > 20) {
-        nav2.classList.add('nav-hidden');
-    } else {
-        nav2.classList.remove('nav-hidden');
-    }
-});
+        if (scrollContainer.scrollTop > 20) {
+            secondaryNav.classList.add('nav-hidden');
+        } else {
+            secondaryNav.classList.remove('nav-hidden');
+        }
 
+    });
+}
+
+/* ACTIVAR LINK SELECCIONADO */
 const navLinks = document.querySelectorAll('.nav2-link');
 
 navLinks.forEach(link => {
@@ -38,17 +46,3 @@ navLinks.forEach(link => {
         this.classList.add('active');
     });
 });
-
-document.getElementById('next-tags').addEventListener('click', function () {
-    const container = document.getElementById('tag-scroll');
-    container.scrollLeft += 200;
-    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 5) {
-        container.scrollLeft = 0;
-    }
-});
-
-
-
-
-
-

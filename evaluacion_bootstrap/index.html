@@ -11,45 +11,55 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Bootstrap CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
 </head>
 
 <body>
-    <!-- Contenedor de toda la pagina para que se adpate al 100% tanto horizontal como verticalmente -->
-    <div class="flex-container d-flex v-100 vh-100 overflow-hidden">
-        <!-- Contenedor necesario para el scroll del main y que la navbar se ancle en la parte superior -->
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="flex-container d-flex vh-100 overflow-hidden">
+
+        <!-- CONTENIDO PRINCIPAL (NAV + MAIN) -->
         <div class="right-page-container flex-grow-1 overflow-y-auto">
-            <!-- Cabezera de la pagina (Navbars) -->
+
             <header class="sticky-top bg-white">
-                <!-- Primer nav (Input y botones) -->
+
+                <!-- NAV PRINCIPAL -->
                 <nav class="navbar p-2 sticky-top border-bottom bg-white d-flex align-items-center flex-nowrap">
+
                     <div class="collapse d-md-flex flex-grow-1" id="searchBar">
                         <form id="buscador-principal" class="flex-grow-1" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                            <input class="form-control me-2" type="search" placeholder="Buscar">
                         </form>
                     </div>
-                    <ul id="botones-nav" class="list-unstyled d-flex align-items-center mb-0 ms-auto gap-2">
+
+                    <ul class="list-unstyled d-flex align-items-center mb-0 ms-auto gap-2">
+
                         <li class="d-md-none">
-                            <button class="custom-btn" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#searchBar">
+                            <button class="custom-btn" data-bs-toggle="collapse" data-bs-target="#searchBar">
                                 <i class="bi bi-search h4"></i>
                             </button>
                         </li>
-                        <li class="position-relative">
-                            <button class="custom-btn"><i class="bi bi-person-circle h2"></i></button>
-                            <span class="custom-tooltip tooltip-bottom shadow">Tu perfil</span>
+
+                        <li data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tu perfil">
+                            <button class="custom-btn">
+                                <i class="bi bi-person-circle h2"></i>
+                            </button>
                         </li>
+
                         <li>
-                            <button class="custom-btn2"><i class="bi bi-chevron-down"></i></button>
+                            <button class="custom-btn2" data-bs-toggle="tooltip" data-bs-placement="right"
+                                data-bs-title="Cuentas">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
                         </li>
+
                     </ul>
                 </nav>
-                <!-- Segundo nav (Navegador de busquedas) -->
+
+                <!-- NAV SECUNDARIO -->
                 <nav id="secondary-nav" class="navbar border-bottom bg-white py-0 position-relative">
                     <div class="container-fluid d-flex align-items-center px-4">
-                        <div id="tag-scroll"
-                            class="d-flex justify-content-start gap-4 overflow-x-auto no-scrollbar flex-nowrap flex-grow-1">
+                        <div id="tag-scroll" class="d-flex gap-4 overflow-x-auto no-scrollbar flex-nowrap flex-grow-1">
                             <a href="#" class="nav2-link active">Todos</a>
                             <a href="#" class="nav2-link">Arquitectura</a>
                             <a href="#" class="nav2-link">Diseño</a>
@@ -60,16 +70,18 @@
                         </div>
                     </div>
                 </nav>
+
             </header>
-            <!-- Contenido principal de la pagina -->
+
+            <!-- CONTENIDO -->
             <main class="col-lg-11 p-4">
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 g-4">
+                <div class="masonry-grid">
 
-                    <!-- Tarjeta 1 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/gato1.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img1.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -80,18 +92,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 2 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img1.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img2.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -102,18 +114,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 3 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img2.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img3.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -124,18 +136,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 4 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img3.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img4.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -146,18 +158,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 5 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img4.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img5.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -168,18 +180,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 6 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img5.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img6.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -190,18 +202,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 7 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img6.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img7.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -212,18 +224,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 8 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img7.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img8.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -234,18 +246,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 9 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img8.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img9.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -256,18 +268,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 10 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img9.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img10.png" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -278,18 +290,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 11 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img10.png" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img11.jpg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -300,18 +312,18 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Tarjeta 12 -->
-                    <div class="col">
-                        <div class="custom-card card border-0 h-100">
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
                             <div class="contenedor-img position-relative overflow-hidden">
-                                <img src="static/images/pinterest-img11.jpg" class="card-img-top" alt="Gato">
+                                <img src="static/images/pinterest-img12.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
                                 <div
                                     class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
                                     <button
@@ -322,108 +334,266 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-end p-0">
-                                <a href="#" class="btn btn-link text-dark shadow-none">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
                                     <i class="bi bi-three-dots"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img13.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img14.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img15.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img16.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img17.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img18.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img19.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CARD -->
+                    <div class="masonry-item">
+                        <div class="custom-card card border-0">
+                            <div class="contenedor-img position-relative overflow-hidden">
+                                <img src="static/images/pinterest-img20.jpeg" class="card-img-top w-100" alt="Imagen no disponible">
+                                <div
+                                    class="overlay-botones d-flex flex-column justify-content-between align-items-end p-3">
+                                    <button
+                                        class="btn btn-danger btn-sm fw-bold px-3 btn-custom-radius btn-hover-efecto">Guardar</button>
+                                    <button class="btn btn-light btn-sm px-2 btn-custom-radius shadow-sm">
+                                        <i class="bi bi-box-arrow-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex justify-content-end p-0">
+                                <a href="#" class="btn btn-link text-dark shadow-none" data-bs-toggle="tooltip"
+                                    data-bs-placement="bottom" data-bs-title="Más acciones">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
+
         </div>
-        <!-- Barra de iconos -->
+
+        <!-- SIDEBAR -->
         <aside class="order-first border-end border-1">
             <div class="aside-container d-flex flex-column vh-100">
-                <!-- Lista sin estilos para los iconos -->
+
                 <ul class="list-unstyled d-flex flex-column">
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right"
+                        data-bs-title="Pinterest">
                         <button class="custom-btn m-2">
                             <i class="bi bi-pinterest h4 text-danger"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Inicio
-                        </span>
                     </li>
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Inicio">
                         <button class="custom-btn m-2">
                             <i class="bi bi-house h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Inicio
-                        </span>
                     </li>
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Explorar">
                         <button class="custom-btn m-2">
                             <i class="bi bi-compass h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Explorar
-                        </span>
                     </li>
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tableros">
                         <button class="custom-btn m-2">
                             <i class="bi bi-columns h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Tus tableros
-                        </span>
                     </li>
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Crear">
                         <button class="custom-btn m-2">
                             <i class="bi bi-plus-square h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Crear
-                        </span>
                     </li>
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right"
+                        data-bs-title="Notificaciones">
                         <button class="custom-btn m-2">
                             <i class="bi bi-bell h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Actualizaciones
-                        </span>
                     </li>
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Mensajes">
                         <button class="custom-btn m-2">
                             <i class="bi bi-chat-dots h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Mensajes
-                        </span>
                     </li>
+
                 </ul>
-                <!-- Lista sin estilos para los iconos 2-->
+
                 <ul class="list-unstyled mt-auto">
-                    <!-- Icono en lista-->
-                    <li class="text-center position-relative group-hover">
+                    <li class="text-center" data-bs-toggle="tooltip" data-bs-placement="right"
+                        data-bs-title="Configuración">
                         <button class="custom-btn m-2">
                             <i class="bi bi-gear h4"></i>
                         </button>
-                        <span class="custom-tooltip tooltip-right shadow">
-                            Configuración y soporte
-                        </span>
                     </li>
                 </ul>
+
             </div>
         </aside>
+
     </div>
 
 
+
+    <!-- Bootstrap JS -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
     <!-- Script JS -->
     <script src="static/js/script.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
 </body>
 
 
